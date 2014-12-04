@@ -1,0 +1,10 @@
+﻿@model IEnumerable<string>
+           
+@foreach (var url in Model)
+{
+    <div>
+        <img src="@url" />
+    </div>
+}
+
+<script src="~/Scripts/images.js"></script>
