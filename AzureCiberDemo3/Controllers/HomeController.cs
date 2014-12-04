@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace AzureCiberDemo3.Controllers
 {
+    using System.Text;
     using System.Threading.Tasks;
     using System.Web.Routing;
 
@@ -53,6 +54,14 @@ namespace AzureCiberDemo3.Controllers
         {
             new SendGridService().Send("per-kristian.helland@ciber.com", "Christmas comes early", "Komplett are going to Poznan!");
             return "Ok";
+        }
+
+        [Route("loaderio-d86e80e4a093deed90cc57140249e979")]
+        public ActionResult Asdf()
+        {
+            return new FileContentResult(
+                Encoding.UTF8.GetBytes("loaderio-d86e80e4a093deed90cc57140249e979"),
+                "text/plain");
         }
     }
 }
