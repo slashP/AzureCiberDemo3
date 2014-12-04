@@ -11,6 +11,8 @@ namespace AzureCiberDemo3.Controllers
 
     using Azure;
 
+    using Mail.Services;
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -44,6 +46,13 @@ namespace AzureCiberDemo3.Controllers
         {
             await new AzureBlobService().UploadAsync(container, Request.Files[0].InputStream);
             return "ok";
+        }
+
+        [Route("sendEmail")]
+        public string SendMail()
+        {
+            new SendGridService().Send("per-kristian.helland@ciber.com", "Christmas comes early", "Komplett are going to Poznan!");
+            return "Ok";
         }
     }
 }
