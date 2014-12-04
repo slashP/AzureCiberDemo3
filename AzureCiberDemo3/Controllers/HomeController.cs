@@ -15,7 +15,7 @@ namespace AzureCiberDemo3.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Hello Poznan!";
+            ViewBag.Message = "Hello Poznan from Oslo!";
 
             return View();
         }
